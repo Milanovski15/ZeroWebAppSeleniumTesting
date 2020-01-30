@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [Surefire suite]" verbose="0">
+  <test name="Surefire test(failed)">
+    <classes>
+      <class name="com.zeroWebAppSecurity.test.ConvertCurrenciesTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="shouldNotBeAbleToConvertIfCurrencyIfNotSelected"/>
+          <include name="closeDriver"/>
+        </methods>
+      </class> <!-- com.zeroWebAppSecurity.test.ConvertCurrenciesTest -->
+      <class name="com.zeroWebAppSecurity.test.AccountActivityModelTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="closeDriver"/>
+          <include name="shouldBeAbleToReadFromAccountActivityTableWithDataProvider"/>
+        </methods>
+      </class> <!-- com.zeroWebAppSecurity.test.AccountActivityModelTest -->
+      <class name="com.zeroWebAppSecurity.test.TransferFundsPageTest">
+        <methods>
+          <include name="closeDriver"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.zeroWebAppSecurity.test.TransferFundsPageTest -->
+    </classes>
+  </test> <!-- Surefire test(failed) -->
+</suite> <!-- Failed suite [Surefire suite] -->

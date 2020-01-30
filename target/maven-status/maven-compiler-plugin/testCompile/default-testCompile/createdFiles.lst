@@ -1,0 +1,5 @@
+com\zeroWebAppSecurity\test\AccountActivityModelTest.class
+com\zeroWebAppSecurity\test\basicHomeworkTest\homework1.class
+com\zeroWebAppSecurity\test\onlyLoginForManual\onlyLogin.class
+com\zeroWebAppSecurity\test\ConvertCurrenciesTest.class
+com\zeroWebAppSecurity\test\TransferFundsPageTest.class

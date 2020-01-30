@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="test Suite" verbose="1" configfailurepolicy="continue" thread-count="3" parallel="classes">
+    <test name="Tests for converting currencies">
+        <classes>
+            <class name="com.zeroWebAppSecurity.test.ConvertCurrenciesTest"/>
+        </classes>
+    </test>
+    <test name="Tests for transfering funds" >
+        <classes>
+            <class name="com.zeroWebAppSecurity.test.TransferFundsPageTest"/>
+        </classes>
+    </test>
+    <test name="Account activity tests using models" >
+        <classes>
+            <class name="com.zeroWebAppSecurity.test.AccountActivityModelTest"/>
+        </classes>
+    </test>
+</suite>
+        <!--enabled="false"-->
