@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name="test Suite" verbose="1" configfailurepolicy="continue" thread-count="3" parallel="classes">
+<suite name="test Suite" verbose="1" configfailurepolicy="continue" thread-count="4" parallel="classes">
     <test name="Tests for converting currencies">
         <classes>
             <class name="com.zeroWebAppSecurity.test.ConvertCurrenciesTest"/>
@@ -14,6 +14,11 @@
     <test name="Account activity tests using models" >
         <classes>
             <class name="com.zeroWebAppSecurity.test.AccountActivityModelTest"/>
+        </classes>
+    </test>
+    <test name="Test for containing elements in the drop down list in transfer funds page" >
+        <classes>
+            <class name="com.zeroWebAppSecurity.test.DDLFeaturesModelTest"/>
         </classes>
     </test>
 </suite>
