@@ -1,10 +1,15 @@
 package com.zeroWebAppSecurity.pages;
 
+import com.zeroWebAppSecurity.components.SimpleDropDownComponent;
+import com.zeroWebAppSecurity.enums.DropDownEnum;
+import com.zeroWebAppSecurity.models.TestAssertModel;
 import com.zeroWebAppSecurity.utils.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class TransferFundsPage extends BasePage {
@@ -31,6 +36,10 @@ public class TransferFundsPage extends BasePage {
     WebElement toAccount;
     @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[2]/div/div/div[2]/div/div[3]/div[2]")
     WebElement transferedAmount;
+
+
+    private SimpleDropDownComponent fromAccountDropDownComponent;
+    private SimpleDropDownComponent toAccountDropDownComponent;
 
     public TransferFundsPage(WebDriver driver) {
         super(driver);
@@ -63,39 +72,55 @@ public class TransferFundsPage extends BasePage {
         }
     }
 
-    public void setAmount(String moneyAmount){
+    public boolean checkFromAcc(List<String> options) {
+        List<WebElement> ddlOptions = drpFromAccount.findElements(By.tagName("option"));
+        List<String> choices = new ArrayList<>();
+        ddlOptions.stream().forEach(e -> choices.add(e.getText().trim()));
+        Boolean flag = options.stream().allMatch(e -> choices.contains(e));
+        return flag;
+    }
+
+    public boolean checkToAcc(List<String> options) {
+        List<WebElement> ddlOptions = drpToAccount.findElements(By.tagName("option"));
+        List<String> choices = new ArrayList<>();
+        ddlOptions.stream().forEach(e -> choices.add(e.getText().trim()));
+        Boolean flag = options.stream().allMatch(e -> choices.contains(e));
+        return flag;
+    }
+
+    public void setAmount(String moneyAmount) {
         clearAndSendKeys(amount, moneyAmount);
     }
 
-    public void setDescription(String desc){
+    public void setDescription(String desc) {
         clearAndSendKeys(description, desc);
     }
 
-    public void pressContinue(){
+    public void pressContinue() {
         waitForElementToBeClickableAndClick(btnContinue);
     }
 
-    public void pressSubmit(){
+    public void pressSubmit() {
         waitForElementToBeClickableAndClick(btnSubmit);
     }
 
-    public void pressCancel(){
+    public void pressCancel() {
         waitForElementToBeClickableAndClick(btnCancel);
     }
 
-    public String getSuccesfullySubmittedTransactionText(){
+    public String getSuccesfullySubmittedTransactionText() {
         return succesfullySubmittedTransaction.getText();
     }
 
-    public String getFromAccountString(){
+    public String getFromAccountString() {
         return fromAccount.getText();
     }
 
-    public String getToAccountString(){
+    public String getToAccountString() {
         return toAccount.getText();
     }
 
-    public String getTransferedAmountString(){
+    public String getTransferedAmountString() {
         return transferedAmount.getText();
     }
 }

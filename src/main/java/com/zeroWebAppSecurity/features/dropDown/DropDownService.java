@@ -3,7 +3,6 @@ package com.zeroWebAppSecurity.features.dropDown;
 import com.zeroWebAppSecurity.utils.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,7 +13,7 @@ public abstract class DropDownService extends BasePage implements DropDownFeatur
     }
 
     @Override
-    public void chooseFromDDL(WebElement ddl, Enum<?> optionEnum) {
+    public void chooseFromDDL(WebElement ddl, String optionEnum) {
         waitForElementToBeClickableAndClick(ddl);
         List<WebElement> ddlOptions = findOptionRowsFromDDL(ddl);
         WebElement selectedOption = ddlOptions.stream()

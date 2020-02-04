@@ -26,8 +26,7 @@ public class ConvertCurrenciesTest {
         homePage = new HomePage(driver);
         homePage = (HomePage) homePage.navigateTo(ConfigurationConst.BASE_URL, homePage);
         loginPage = homePage.clickSignIn();
-        loginPage.sendCredentials();
-        accountSummaryPage = loginPage.submitCredentials();
+        accountSummaryPage = loginPage.loginWithDefaultCredentials();
         payBillsPage = accountSummaryPage.clickPayBills();
         payBillsPage.clickPurchaseForeignCurrency();
     }

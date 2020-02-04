@@ -7,9 +7,7 @@ import com.zeroWebAppSecurity.utils.DriverFactory;
 import com.zeroWebAppSecurity.utils.Log;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -28,8 +26,7 @@ public class TransferFundsPageTest {
         homePage = new HomePage(driver);
         homePage = (HomePage) homePage.navigateTo(ConfigurationConst.BASE_URL, homePage);
         loginPage = homePage.clickSignIn();
-        loginPage.sendCredentials();
-        accountSummaryPage = loginPage.submitCredentials();
+        accountSummaryPage = loginPage.loginWithDefaultCredentials();
     }
 
     @Test(priority = 1)
@@ -43,7 +40,7 @@ public class TransferFundsPageTest {
         transferFundsPage.pressContinue();
         transferFundsPage.pressSubmit();
 
-        //Log.assertion("The message after a succesfull transaction should be: You successfully submitted your transaction.");
+        //Log.assertion("The message after a successful transaction should be: You successfully submitted your transaction.");
         assertEquals("You successfully submitted your transaction.", transferFundsPage.getSuccesfullySubmittedTransactionText());
         //Log.assertion("Money are transfered from Savings account.");
         assertEquals("Savings", transferFundsPage.getFromAccountString());

@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface DropDownFeature {
 
-    void chooseFromDDL(WebElement ddl, Enum<?> optionEnum);
+    void chooseFromDDL(WebElement ddl, String optionEnum);
 
     List<String> getAvailableOptionsFromDDL(WebElement ddl);
 

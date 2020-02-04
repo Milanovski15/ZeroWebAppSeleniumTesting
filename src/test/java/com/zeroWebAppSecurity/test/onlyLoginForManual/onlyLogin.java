@@ -20,7 +20,6 @@ public class onlyLogin {
         homePage = new HomePage(driver);
         homePage = (HomePage) homePage.navigateTo(ConfigurationConst.BASE_URL, homePage);
         loginPage = homePage.clickSignIn();
-        loginPage.sendCredentials();
-        loginPage.submitCredentials();
+        loginPage.loginWithDefaultCredentials();
     }
 }

@@ -13,7 +13,8 @@ public class AccountSummaryPage extends BasePage {
     WebElement transferFunds;
     @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[1]/div/div/ul/li[2]/a")
     WebElement accountActivity;
-
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[1]/div/div/ul/li[6]/a")
+    WebElement onlineStatements;
 
     public AccountSummaryPage(WebDriver driver) {
         super(driver);

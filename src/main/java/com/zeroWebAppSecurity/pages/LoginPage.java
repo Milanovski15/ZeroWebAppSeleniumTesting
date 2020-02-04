@@ -26,14 +26,13 @@ public class LoginPage extends BasePage {
         return new LoginPage(driver);
     }
 
-    public void sendCredentials(){
+    public AccountSummaryPage loginWithDefaultCredentials(){
         clearAndSendKeys(userName, USERNAME_DEFAULT);
         clearAndSendKeys(password, PASSWORD_DEFAULT);
-    }
-
-    public AccountSummaryPage submitCredentials(){
         waitForElementToBeClickableAndClick(submitbtn);
         return new AccountSummaryPage(getDriver());
     }
+
+
 
 }
